@@ -1,0 +1,129 @@
+{
+  "apps": [
+  ],
+  "appstats": [
+  ],
+  "core": {
+    "binVersion": "unknown",
+    "gitRevision": "unknown",
+    "goVersion": "go1.13.5"
+  },
+  "modeinfo": "v1.18.9+k3s1",
+  "node": {
+    "{{.NodeName}}": {
+      "arch": "amd64",
+      "bootID": "5eb113a7-8fdd-4a41-bf1e-f6952261bda5",
+      "containerRuntime": "containerd://1.3.3-k3s2",
+      "hostname": "{{.NodeName}}",
+      "kernelVer": "4.4.0-184-generic",
+      "labels": {
+        "beta.kubernetes.io/arch": "amd64",
+        "beta.kubernetes.io/instance-type": "k3s",
+        "beta.kubernetes.io/os": "linux",
+        "k3s.io/hostname": "{{.NodeName}}",
+        "k3s.io/internal-ip": "172.20.6.18",
+        "kubernetes.io/arch": "amd64",
+        "kubernetes.io/hostname": "{{.NodeName}}",
+        "kubernetes.io/os": "linux",
+        "node-role.kubernetes.io/master": "true",
+        "node.kubernetes.io/instance-type": "k3s"
+      },
+      "machineID": "d5c83419e64dd24670253a045c39964c",
+      "os": "linux",
+      "osImage": "Ubuntu 16.04.6 LTS",
+      "role": "master",
+      "systemUUID": "03000200-0400-0500-0006-000700080009"
+    }
+  },
+  "nodestats": {
+    "sz-test-18": {
+      "capacity": {
+        "cpu": "4",
+        "memory": "8092508Ki"
+      },
+      "extension": null,
+      "ready": true,
+      "usage": {
+        "cpu": "843639937n",
+        "memory": "2165852Ki"
+      }
+    }
+  },
+  "sysapps": [
+    {
+      "name": "{{.BaetylBroker}}",
+      "version": "{{.BaetylBrokerVersion}}"
+    },
+    {
+      "name": "{{.BaetylCore}}",
+      "version": "{{.BaetylCoreVersion}}"
+    },
+    {
+      "name": "{{.BaetylInit}}",
+      "version": "{{.BaetylInitVersion}}"
+    }
+  ],
+  "sysappstats": [
+    {
+      "deployType": "deployment",
+      "instances": {
+        "baetyl-init-bf59c99c8-57rds": {
+          "createTime": "2021-09-07T05:59:22Z",
+          "ip": "10.42.0.7",
+          "name": "baetyl-init-bf59c99c8-57rds",
+          "nodeName": "{{.NodeName}}",
+          "serviceName": "baetyl-init",
+          "status": "Running",
+          "usage": {
+            "cpu": "5329239n",
+            "memory": "16044Ki"
+          }
+        }
+      },
+      "name": "{{.BaetylInit}}",
+      "status": "Running",
+      "version": "{{.BaetylInitVersion}}"
+    },
+    {
+      "deployType": "deployment",
+      "instances": {
+        "baetyl-broker-b5ddcd996-7nxz2": {
+          "createTime": "2021-09-07T06:00:20Z",
+          "ip": "10.42.0.9",
+          "name": "baetyl-broker-b5ddcd996-7nxz2",
+          "nodeName": "{{.NodeName}}",
+          "serviceName": "baetyl-broker",
+          "status": "Running",
+          "usage": {
+            "cpu": "0",
+            "memory": "2796Ki"
+          }
+        }
+      },
+      "name": "{{.BaetylBroker}}",
+      "status": "Running",
+      "version": "{{.BaetylBrokerVersion}}"
+    },
+    {
+      "deployType": "deployment",
+      "instances": {
+        "baetyl-core-7964785b49-f628l": {
+          "createTime": "2021-10-18T06:36:27Z",
+          "ip": "10.42.0.26",
+          "name": "baetyl-core-7964785b49-f628l",
+          "nodeName": "{{.NodeName}}",
+          "serviceName": "baetyl-core",
+          "status": "Running",
+          "usage": {
+            "cpu": "7179289n",
+            "memory": "15184Ki"
+          }
+        }
+      },
+      "name": "{{.BaetylCore}}",
+      "status": "Running",
+      "version": "{{.BaetylCoreVersion}}"
+    }
+  ],
+  "time": "{{.ReportTime}}"
+}

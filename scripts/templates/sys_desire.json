@@ -1,0 +1,19 @@
+{
+  "infos": [
+    {
+      "kind": "application",
+      "name": "{{.BaetylInit}}",
+      "version": "{{.BaetylInitVersion}}"
+    },
+    {
+      "kind": "application",
+      "name": "{{.BaetylCore}}",
+      "version": "{{.BaetylCoreVersion}}"
+    },
+    {
+      "kind": "application",
+      "name": "{{.BaetylBroker}}",
+      "version": "{{.BaetylBrokerVersion}}"
+    }
+  ]
+}

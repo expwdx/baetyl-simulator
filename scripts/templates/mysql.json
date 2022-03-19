@@ -1,0 +1,96 @@
+{
+  "name": "{{.AppName}}",
+  "selector": "{{.NodeSelector}}",
+  "nodeSelector": "",
+  "mode": "kube",
+  "type": "container",
+  "labels": {
+    "service_type": "edge",
+    "service_level": "base"
+  },
+  "description": "mysq service",
+  "services": [
+    {
+      "name": "{{.AppName}}",
+      "labels": {},
+      "image": "harbor.sz.yingzi.com/base/mysql:5",
+      "replica": 1,
+      "ports": [
+        {
+          "hostPort": 3306,
+          "containerPort": 3306,
+          "hostIP": "",
+          "protocol": ""
+        }
+      ],
+      "volumeMounts": [
+        {
+          "name": "timezone",
+          "mountPath": "/etc/timezone",
+          "readOnly": false
+        },
+        {
+          "name": "localtime",
+          "mountPath": "/etc/localtime",
+          "readOnly": false
+        },
+        {
+          "name": "data",
+          "mountPath": "/var/lib/mysql",
+          "readOnly": false
+        },
+        {
+          "name": "configfile",
+          "mountPath": "/etc/mysql/mysql.conf.d/mysqld.cnf",
+          "readOnly": false
+        }
+      ],
+      "env": [
+        {
+          "name": "MYSQL_ROOT_PASSWORD",
+          "value": "test_n618"
+        }
+      ],
+      "args": [],
+      "devices": [],
+      "resources": {
+        "limits": {}
+      },
+      "security": {
+        "privileged": false
+      },
+      "hostNetwork": false
+    }
+  ],
+  "volumes": [
+    {
+      "name": "timezone",
+      "hostPath": {
+        "path": "/etc/timezone"
+      }
+    },
+    {
+      "name": "localtime",
+      "hostPath": {
+        "path": "/etc/localtime"
+      }
+    },
+    {
+      "name": "data",
+      "hostPath": {
+        "path": "/iotdata/baetyl/volumes/mysql/data"
+      }
+    },
+    {
+      "name": "configfile",
+      "hostPath": {
+        "path": "/iotdata/baetyl/volumes/mysql/conf/mysqld.cnf"
+      }
+    }
+  ],
+  "registries": [
+    {
+      "name": "harbor"
+    }
+  ]
+}
